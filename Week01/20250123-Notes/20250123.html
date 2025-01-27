@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding. without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+    <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The title tag shows up in the browser tab and as the big blue link in search results -->
+
+    <title>HTML 101</title>
+    <style>
+      /* tag selector = any p tag will get these styles unless they have their own styles example is nyu_text */
+      p {
+        color: brown;
+      }
+
+      /* class selectors always begin with a "." 
+      the style gets applied wherever that class selector is mentioned
+      */
+      .nyu_text {
+        color: blueviolet;
+      }
+
+      /* ID selector always starts with a "#" 
+      IDs are unique (cannot be reused on the same page like H1) */
+      #top {
+        color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- everything inside the body tag shows up to the user unless modified to not be visible with css -->
+
+    <!-- ONLY 1 H1 per page -->
+    <!-- Also, headings will inherently be spaced more through 1.5 or 2 space -->
+    <h1 id="top">
+      Heading 1 is the most important text on the page. Only one for each page.
+    </h1>
+    <h2>
+      As the heading numbers get bigger, the text gets smaller and in
+      association, the hierarchy of the page. All of the text is still bold(ish)
+      to separate it from other text tags
+    </h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5 is actually smaller than our default text</h5>
+    <h6>
+      Heading 6 is actually smaller than our default text as well, but they're
+      both still bold
+    </h6>
+
+    <!-- horizontal rule also known as the page divider -->
+    <hr />
+
+    <!-- most text will likely be <p> tags -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+      <!-- the <br /> tag is meant for line breaks rather than a whole paragraph -->
+      Donec sit amet lacinia ligula, at fringilla massa. Aenean nec nisi ligula.
+
+      <!-- Anchor tags must always have an href other wise they're useless 
+        href utilizes links
+        target is focused on where the new tab will be opened, where _blank is a new tab and _self is the same tab 
+        -->
+      <a href="https://zhaojicun.com/" target="_blank">Curabitur</a>
+      quam purus, aliquet nec pellentesque a, tinciduant vitae massa. Nunc id
+      porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et
+      ultrices posuere cubilia curae; Nullam arcu sem, placerat id turpis eget,
+      venenatis suscipit purus. Pellentesque efficitur, diam tempus molestie
+      tempor, ex justo faucibus sapien, sit amet vestibulum risus nunc sit amet
+      neque. Cras pellentesque quam magna. Class aptent taciti sociosqu ad
+      litora torquent per conubia nostra, per inceptos himenaeos. Praesent
+      congue iaculis arcu sit amet laoreet.
+    </p>
+
+    <!-- span style overwrites class color -->
+    <p class="nyu_text">
+      <span style="color: red">Suspendisse</span> id cursus tortor. Quisque quis
+      massa eget purus lobortis gravida. Proin elementum ornare felis, id
+      accumsan lacus euismod interdum. Phasellus bibendum eros velit, ac finibus
+      quam euismod id. Suspendisse hendrerit risus nec arcu imperdiet, vel
+      tincidunt mi lacinia. Aliquam cursus ornare neque, id bibendum sem
+      pellentesque ac. Integer consectetur, lorem facilisis dignissim iaculis,
+      ligula lectus posuere eros, quis eleifend est libero quis leo.
+    </p>
+
+    <p>
+      <!-- <em> means emphasize -->
+      <em>Phasellus</em>
+
+      <!-- <strong> is the equivalent of bold -->
+      <strong> libero</strong>
+      felis, aliquam vel feugiat a, porta sed odio. Suspendisse sit amet sodales
+      mauris. Praesent laoreet vel turpis ut efficitur. Aenean ac placerat
+      velit. Maecenas pharetra quis lectus a tempus. Ut at egestas est, eu
+      tincidunt justo. Donec placerat mattis lacus, eu convallis sem vehicula
+      sed. Aenean eget sagittis massa, ut placerat mauris. Orci varius natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+      commodo libero non diam volutpat, quis tincidunt odio tempus.
+    </p>
+
+    <hr />
+    <!-- Homework example -->
+    <!-- this is h2 because there's already an h1 tag at the very top of the page -->
+    <h2>Buttermilk Pancakes</h2>
+
+    <!-- the example below is just text that has no formatting, it'll show up but it is unusable -->
+    this is some floating tex text without any body tags
+
+    <p>This is the text that would work normally</p>
+
+    <!-- image loaded from an external url 
+        * there needs to always have an alt tag that helps the screen reader
+        * don't forget to add the extension of the type
+        * attributes right here modify the source and therefore completely invalidate anything done in CSS
+        * in-line styling is only useful for testing out an idea or you can't figure it out in CSS
+        
+        -->
+    <img
+      src="https://www.allrecipes.com/thmb/_vJ9_nf-_oqzy6L6Uwq8oTuZjzc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Buttermilk-Pancakes-II-2000-d723f0c62d6341a5b7266ae64acfedf9.jpg"
+      alt="Alt text that shows up when a link doesn't work or a screen reader would read out loud"
+      width="1200px"
+      height="100px"
+    />
+
+    <!-- this is an example of a broken link -->
+    <img
+      src="https://www.allrepes.com/thmb/_vJ9_nf-_oqzy6L6Uwq8oTuZjzc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Buttermilk-Pancakes-II-2000-d723f0c62d6341a5b7266ae64acfedf9.jpg"
+      alt="Example of a broken link and alt text that shows up when a link doesn't work or a screen reader would read out loud"
+    />
+
+    <!-- Image loaded from the same folder (right next to) as hteml file-->
+    <img src="PancakeImage_01.webp" alt="pancake next to index file" />
+
+    <!-- Image loaded from a folder within the project-->
+    <img
+      src="Image/20250123-PancakeImage_02.jpg"
+      alt="pancake image in the folder"
+    />
+    <!-- LISTS 
+          <ul> unordered list - bullet points
+          <li> list item
+          <ol> ordered list - numbers
+
+          *you can nest ordered and unordered lists forever, but the bullets will change slightly depending on the hierarchy, think about the bullet points
+        -->
+    <ul>
+      <li>Flour</li>
+      <li>Sugar</li>
+      <li>Eggs</li>
+      <li>Butter</li>
+    </ul>
+
+    <ol>
+      <li>mix it up</li>
+      <li>heat it up</li>
+      <li>pour some batter</li>
+      <li>flip it</li>
+      <li>eat it</li>
+    </ol>
+
+    <hr />
+
+    <!-- Navigation menus are all lists with links in them -->
+    <ul>
+      <li>Flour</li>
+      <li>Sugar</li>
+      <li>Eggs</li>
+      <li>
+        Butter
+        <ol>
+          <li>Sublist-item 1</li>
+          <li>Sublist-item 2</li>
+          <li>Sublist-item 3</li>
+        </ol>
+      </li>
+    </ul>
+
+    <ol>
+      <li>mix it up</li>
+      <li>heat it up</li>
+      <li>pour some batter</li>
+      <li>flip it</li>
+      <li>eat it</li>
+    </ol>
+
+    <!-- Anchor tag linking to another element on the same page by ID 
+         * linking to an id utilizes #"id", in this case, the back to the top references the h1
+    -->
+    <a href="#top">Back to top</a>
+  </body>
+</html>
