@@ -2,6 +2,9 @@
 
 > "This is the best chocolate chip cookies recipe ever! No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time!"
 
+
+![Top-down photo of chocolate chip cookies](https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg)
+
 ## Ingredients
 - 1 cup salted butter *softened*
 - 1 cup granulated sugar
