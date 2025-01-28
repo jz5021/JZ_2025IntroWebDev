@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Form Elements</h1>
+
+    <!-- Form using basic input types 
+    * form action usually contains a file or link to process the form fileds once a user clicks submit.
+    *the important one here is the form method; if you want more information just google it specifically on mdn or W3 schools
+      - GET: shows the sensitive information in the URL
+      - POST: hides sensitive information in URL
+    -->
+    <form
+      action="create_profile.js"
+      name="user_create"
+      target="_self"
+      method="GET"
+    >
+      <!-- fieldsets are for grouping input elements, they are labeled by the legend tag encased in them -->
+      <fieldset>
+        <legend>Simple Text Input</legend>
+        <p>
+          Most basic text input, where you change the input type by changing the
+          value of the type attribute
+        </p>
+
+        <!-- "label for" attribute should match the "input name" attribute -->
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" disabled />
+        <br />
+        <br />
+        <label for="last_name">Last Name:</label>
+        <input
+          type="text"
+          name="last_name"
+          maxlength="10"
+          placeholder="Smith"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Text Area</legend>
+        <label for="why_class">Why did you take this class?</label>
+        <textarea name="why_class" cols="50" rows="5" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Common input types</legend>
+        <label for="cost">Number:</label>
+        <input
+          name="cost"
+          type="number"
+          min="10"
+          max="100"
+          step=".01"
+          required
+        />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <label for="favorite_color">What's your favorite color?</label>
+        <input type="color" name="favorite_color" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Check Boxes</legend>
+        <!-- Check boxes allow the user to select more than one option.
+         All grouped checkbox inputs share the same name but different values.
+        -->
+
+        <p>What pets do you have?</p>
+        <!-- When you're copy-pasting, remember to update the values of each of the fields 
+        * a mess up would be where all of the inputs are "dog"
+        * all of the inputs need to have the same name attribute as well
+        * labels can be an image, what is submitted is the value
+        -->
+        <input type="checkbox" name="pet(s)" value="dog" /><label>Dog</label>
+        <input type="checkbox" name="pet(s)" value="cat" /><label>Cat</label>
+        <input type="checkbox" name="pet(s)" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="checkbox" name="pet(s)" value="lizard" /><label
+          >Lizard</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <!-- Radio fields allow for the users to only select one option
+         so this is similar to the input checkbox, but has restrictions
+         * all grouped radio inputs share the same name but different values 
+         * if you can select more than one of these then that means that there's more than one name-there's a typo
+         -->
+        <legend>Radio Fields</legend>
+        <input type="radio" name="favorite_pet" value="dog" /><label>Dog</label>
+        <input type="radio" name="favorite_pet" value="cat" /><label>Cat</label>
+        <input type="radio" name="favorite_pet" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="radio" name="favorite_pet" value="lizard" /><label
+          >Lizard</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Pick a state</label>
+
+        <!-- Compared to checkbox and radio fields, the select name groups them together from the get-go -->
+        <select name="state">
+          <option value="NY">New York</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NM">New Mexico</option>
+        </select>
+      </fieldset>
+      <input type="button" value="Submit" name="submit_profile_d" disabled />
+      <button
+        title="This is a disabled submit button using the button tag"
+        name="submit_profile"
+      >
+        Create Profile
+      </button>
+
+      <hr />
+      <h2>Self-exercise</h2>
+
+      <fieldset>
+        <input
+          type="image"
+          src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+          alt="Submit"
+          width="48"
+        /><label>Blank label</label>
+      </fieldset>
+    </form>
+  </body>
+</html>
