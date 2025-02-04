@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us Site 1</title>
+    <meta name="description" content="Method 1 - Page Names in File Name" />
+  </head>
+
+  <body>
+    <!-- Place your Nav Links Here -->
+    <nav>
+      <!-- use UL LI and A for Nav Links within our NAV tag -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Contact Us</h1>
+
+    <!-- For form attributes, try to stick to a pattern rather than mixing up what the order is -->
+    <img src="img/chicken3.jpeg" alt="Bilbo Baggins" />
+    <form method="POST" name="contact">
+      <h3>Contact Us</h3>
+      <label for="first_name">First Name</label>
+      <br />
+      <input type="text" name="first_name" placeholder="Jane" required />
+      <br />
+      <label for="last name">Last Name</label>
+      <br />
+      <input type="text" name="last_name" placeholder="Doe" />
+      <br />
+      <label for="email">Email Address</label>
+      <br />
+      <input
+        name="email"
+        type="email"
+        placeholder="janedoe@food.com"
+        required
+      />
+      <br />
+      <label for="message">What's up?</label>
+      <br />
+      <textarea name="message" cols="100" rows="10" required></textarea>
+      <br />
+      <button>Send Message</button>
+    </form>
+  </body>
+</html>
