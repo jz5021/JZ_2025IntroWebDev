@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intro to CSS Text and Spans</title>
+    <style type="text/CSS">
+      /* This is called a css reset that gets rid of all default styling */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        width: 100%;
+        background-color: blanchedalmond;
+      }
+
+      /* Nav tag with main-nav assigned to it
+      *nav#main-nav is NOT the same as nav#main-nav
+      *specificity here
+      */
+      nav#main-nav ul {
+        /* this is to remove all bullet points */
+        list-style-type: none;
+        overflow: hidden;
+        /* Since we're using inline block, we need to zero out font size */
+        /* font-size: 0; */
+      }
+
+      #main-nav ul li {
+        /* li's display block by default (they don't want to share horizontal space) */
+        display: inline-block;
+        font-size: 1rem;
+      }
+
+      li a {
+        display: block;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        /* remove the default link styles */
+        text-decoration: none;
+        color: brown;
+      }
+
+      /* Pseudo selector */
+      li a:hover {
+        background-color: rgba(0, 0, 0, 1);
+        color: #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav id="main-nav">
+        <ul>
+          <!-- # is a placeholder for links -->
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

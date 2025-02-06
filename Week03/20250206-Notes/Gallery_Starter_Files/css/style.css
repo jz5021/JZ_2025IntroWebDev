@@ -1,0 +1,86 @@
+/* How you load a google font or any external font in a css file */
+/* We are essentially importing another stylesheet from elsewhere */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* This is generally a file reset */
+
+/* This is just temporary for being able to be accurate for your font usage */
+.kaushan-script-regular {
+    font-family: "Kaushan Script", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* GLOBAL STYLES */
+  * {
+    margin: 0;
+    padding: 0;
+    /* This is called box-sizing and allows for you to
+    modify your boxes without needing to track numbers for bullets 
+    https://www.w3schools.com/css/css3_box-sizing.asp */
+    /* box-sizing: border-box; */
+  }
+
+  html{
+    /* This is the fallback in case your image doesn't load, CSS reads top to bottom */
+    background-color: black;
+    /* This is how we get a full sized fixed image, centered background 
+    utilizing a background allows you to add properties compared to background image
+    the other words after cover the other background options that you could input*/
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    /* This covers the entire browser size */
+    background-size: cover;
+  }
+  
+/* Apply the default font style at the body tag so that all children
+elements inherit this style
+we can always overwrite this wehn necessary with a higher hierarchy */
+
+body{
+    font-family: "Kaushan Script", serif;
+}
+
+/* To always make sure an image fits inside of its parent div, apply these style rules */
+img {
+    /* Not 100% of the page but 100% of the div around it */
+    width: 100%;
+    height: auto;
+}
+
+/* GALLERY */
+
+.container {
+    width: 900px;
+    /* Margin auto only works on left right and not top bottom */
+    margin: 100px auto;
+    /* when we use inline-block to stack elements
+    we have to zero out the font size on the
+    parent or container element */
+    font-size: 0;
+}
+
+.polaroid {
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    /* Whenever you want to abs position an element inside another parent element, the
+    parent element needs to be positioned (declared not static) as well */
+    position: relative;
+}
+
+/* Descendant selector (something that has img with polaroid as the class */
+.polaroid img{
+    /* border shorthand is width, style, color */
+    /* faster to declare all border and then expand upon single border */
+    border: 10px solid #CCC;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 10px;
+    width: 280px;
+    text-align: center;
+    color: #333;
+}

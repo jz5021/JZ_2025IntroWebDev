@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intro to CSS Text and Spans</title>
+
+    <!-- External stylesheets are overridden by internal stylesheets -->
+    <!-- Internal Stylesheet 
+     *styles defined here only apply to this html page
+     *you go from most general to more specific orders -->
+    <style type="text/CSS">
+      /* Universal selector - everything on the page has this styling */
+      * {
+        /* Some fonts have quotes around them because they might not be already on the computer */
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      /* Tag selector
+      this one specifically targets p tags */
+      p {
+        /* For font size focus on em, rem, or px; other units are for print 
+        *default font size for rem is 16px, you can multiply by decimals to get more detailed */
+        font-size: 0.75rem; /* This is 12px */
+        font-family: cursive;
+        color: cadetblue;
+      }
+
+      /* class selector
+      can apply to any tag, but needs to have the class attribute */
+      .sillyText {
+        font-weight: 800;
+        color: #006fff;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-decoration: overline;
+        text-transform: uppercase;
+      }
+
+      /* ID selector that only has one application per page */
+      #mostImportantText {
+        /* Applying one side at a time individually vs all margins */
+        margin-top: 0;
+
+        /* 2 values for margin, top/bottom and left/right
+        *no commas for these */
+        margin: 0 2rem;
+
+        /* 4 values for everything individually and goes top counterclockwise (top, right, bottom, left) */
+        margin: 5px 10px 15px 20px; /* Because this is the last margin, it is also the last one applied */
+
+        /* 4 values = x, y, blur, color */
+        text-shadow: 4px 4px 6px red;
+
+        /* Border (width, style, color)
+        *borders appear inside margins */
+        border: 2px solid rgb(110, 255, 187, 0.5);
+        padding: 1rem 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reasons why Nic Cage is actually a great actor</h1>
+    <p>Nicolas Cage has an Oscar.</p>
+    <p>
+      He makes about eight movies per year.
+      <!-- The span here is not assigned the CSS styling because it's in the tag selector -->
+      <span class="sillyText"
+        >At least half of them are laughably watchable.</span
+      >
+    </p>
+
+    <h2 id="mostImportantText">He bought a stolen dinosaur egg.</h2>
+  </body>
+</html>
