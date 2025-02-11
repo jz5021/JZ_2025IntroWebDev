@@ -1,0 +1,240 @@
+/* How you load a google font or any external font in a css file */
+/* We are essentially importing another stylesheet from elsewhere */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* This is generally a file reset */
+
+/* This is just temporary for being able to be accurate for your font usage */
+.kaushan-script-regular {
+    font-family: "Kaushan Script", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* GLOBAL STYLES */
+  * {
+    margin: 0;
+    padding: 0;
+    /* This is called box-sizing and allows for you to
+    modify your boxes without needing to track numbers for bullets 
+    https://www.w3schools.com/css/css3_box-sizing.asp 
+    this allows for the width to include the heading rather than only the content*/
+    box-sizing: border-box;
+  }
+
+  html{
+    /* This is the fallback in case your image doesn't load, CSS reads top to bottom */
+    background-color: black;
+    /* This is how we get a full sized fixed image, centered background 
+    utilizing a background allows you to add properties compared to background image
+    the other words after cover the other background options that you could input*/
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    /* This covers the entire browser size */
+    background-size: cover;
+  }
+  
+/* Apply the default font style at the body tag so that all children
+elements inherit this style
+we can always overwrite this wehn necessary with a higher hierarchy */
+
+body{
+    font-family: "Kaushan Script", serif;
+}
+
+/* To always make sure an image fits inside of its parent div, apply these style rules */
+img {
+    /* Not 100% of the page but 100% of the div around it */
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+/* This uses flexbox rather than inline box */
+header {
+    width: 100%;
+    padding: 0 10%;
+    height: 50px;
+    background-color: grey;
+    /* hides content that goes beyond the width and the height */
+    overflow-y: hidden;
+    /* You want this to stay at the top of the screen even if you scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+    z-index: 10;
+
+    /* flex container properties */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* this only applies to children, not anything below it */
+    align-items: center;
+
+    background: url('../img/hotel-wallpaper-black.webp');
+}
+
+header h1 {
+    color: #aaaaaa;
+}
+
+/* this isn't extremely specific, but normally, the more specific the better */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(40,40,40,0.2);
+}
+
+nav ul li {
+    font-size: 18px;
+    height: 50px;
+    width: 120px;
+    /* old-school way of centering text because a line of text has the same height
+    as the base height */
+    line-height: 50px;
+}
+
+/* over-specificity causes issues */
+nav a {
+    text-decoration: none;
+    color: #aaaaaa;
+    display: block;
+    /* you always set the transition on the default state */
+    transition: all 1s;
+}
+
+nav a:hover {
+    background-color: rgba(40,40,40,0.2);
+    color: white;
+}
+
+/* this is making your own pseudoclass..? */
+nav a.active {
+    background-color: black;
+    color: white;
+}
+
+
+/* GALLERY */
+
+.container {
+    width: 900px;
+    /* Margin auto only works on left right and not top bottom */
+    margin: 100px auto;
+    /* when we use inline-block to stack elements
+    we have to zero out the font size on the
+    parent or container element */
+    font-size: 0;
+}
+
+.polaroid {
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    /* Whenever you want to abs position an element inside another parent element, the
+    parent element needs to be positioned (declared not static) as well */
+    position: relative;
+}
+
+/* Descendant selector (something that has img with polaroid as the class */
+.polaroid img{
+    /* border shorthand is width, style, color */
+    /* faster to declare all border and then expand upon single border */
+    border: 10px solid #CCC;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 10px;
+    width: 280px;
+    text-align: center;
+    color: #333;
+}
+
+/* TRANSFORMS */
+.scale-up {
+    transform: scale(1.2);
+}
+
+/* What went wrong here is because I used a comma for some reason in the html for the multiple class */
+.scale-X {
+    transform: scale(2,1);
+}   
+
+.scale-Y {
+    transform: scaleY(2);
+}
+
+.skew-X {
+    transform: skewX(20deg);
+    /* transform-origin: top; helps you pin where you're scaling from */
+}
+
+.skew-Y {
+    transform: skewY(20deg);
+}
+
+.skew-both {
+    transform: skew(10deg, 30deg);
+}
+
+.rot-X {
+    transform: rotateX(120deg);
+}
+
+.rot-Y {
+    transform: rotateY(120deg);
+}
+
+.rot-Z {
+    transform: rotateZ(120deg);
+}
+
+.rot-left {
+    transform: rotate(-20deg);
+    transition: all 5s ease-in-out;
+    transform-origin: left;
+}
+
+.rot-left:hover {
+    transform: rotate(20deg);
+    /* This is default for a tags but not for images to prime interactivity*/
+    cursor: pointer;
+}
+
+.skew-hover {
+    transform: skewX(30deg);
+    /* this is where you put your "animation" */
+    transition: all 1s ease;
+}
+
+.skew-hover:hover {
+    transform: skew(-30deg);
+    cursor: pointer;
+}
+
+.scale-hover {
+    transform: scale(0.5);
+    transition: all 2s linear;
+}
+
+.scale-hover:hover {
+    transform: scale(1.5);
+    filter: blur(5px);
+    cursor: pointer;
+}
+
+.color-swap {
+    filter: grayscale(100%);
+    /* Adding this transition time here overrides the previous mention of transition
+    in the class that is applied to the div with color-swap */
+    transition: all 2s linear;
+}
+
+.color-swap:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
