@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>20250127-Homework_01</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Source Website: https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/ 
+    Goals:
+    * use some basic css in both a stylesheet and the index document to create some stylistic changes
+    -->
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>JoyfoodSunshine</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Index+</a></li>
+          <li><a href="#">Dinner Recipes</a></li>
+          <li><a href="#">Desserts</a></li>
+          <li><a href="#">Side Dishes</a></li>
+          <li><a href="#">Appetizers</a></li>
+          <li><a href="#">About+</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-page">
+      <main>
+        <section>
+          <h2>The Best Chocolate Chip Cookie Recipe Ever</h2>
+
+          <img
+            src="https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg"
+            alt="Top-down photo of chocolate chip cookies"
+          />
+
+          <p>
+            This is the best chocolate chip cookies recipe ever! No funny
+            ingredients, no chilling time, etc. Just a simple, straightforward,
+            amazingly delicious, doughy yet still fully cooked, chocolate chip
+            cookie that turns out perfectly every single time!
+          </p>
+
+          <p>
+            Everyone needs a classic chocolate chip cookie recipe in their
+            repertoire, and this is mine. It is seriously the Best Chocolate
+            Chip Cookie Recipe Ever! I have been making these for many, many
+            years and everyone who tries them agrees they’re out-of-this-world
+            delicious!
+          </p>
+
+          <p>
+            Plus, there’s no funny ingredients, no chilling, etc. Just a simple,
+            straightforward, amazingly delicious, doughy yet still fully cooked,
+            chocolate chip cookie that turns out perfectly every single time!
+          </p>
+
+          <p>
+            These are everything a chocolate chip cookie should be. Crispy and
+            chewy. Doughy yet fully baked. Perfectly buttery and sweet.
+          </p>
+        </section>
+
+        <section>
+          <img
+            src="https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg"
+            alt="Top-down photo of chocolate chip cookies"
+          />
+          <h3>How to Make Chocolate Chip Cookies</h3>
+          <p>
+            Let’s walk through how to make chocolate chip cookies step-by-step,
+            and don’t forget to watch the video.
+          </p>
+        </section>
+
+        <!-- Div for the ingredients -->
+        <div class="main-lists">
+          <h4>Ingredients</h4>
+          <ul>
+            <li>1 cup salted butter softened</li>
+            <li>1 cup granulated sugar</li>
+            <li>1 cup light brown sugar packed</li>
+            <li>2 teaspoons pure vanilla extract</li>
+            <li>2 large eggs</li>
+            <li>3 cups all-purpose flour</li>
+            <li>1 teaspoon baking soda</li>
+            <li>½ teaspoon baking powder</li>
+            <li>1 teaspoon sea salt</li>
+            <li>2 cups chocolate chips (12 oz)</li>
+          </ul>
+        </div>
+
+        <!-- Div for steps -->
+        <div class="main-lists">
+          <h4>Steps</h4>
+          <ol>
+            <li>
+              Preheat oven to 375 degrees F. Line three baking sheets with
+              parchment paper and set aside.
+            </li>
+            <li>
+              In a medium bowl mix flour, baking soda, baking powder and salt.
+              Set aside.
+            </li>
+            <li>Cream together butter and sugars until combined.</li>
+            <li>Beat in eggs and vanilla until light (about 1 minute).</li>
+            <li>Mix in the dry ingredients until combined.</li>
+            <li>Add chocolate chips and mix well.</li>
+            <li>
+              Roll 2-3 Tablespoons (depending on how large you like your
+              cookies) of dough at a time into balls and place them evenly
+              spaced on your prepared cookie sheets.
+            </li>
+            <li>
+              Bake in preheated oven for approximately 8-10 minutes. Take them
+              out when they are just barely starting to turn brown.
+            </li>
+            <li>
+              Let them sit on the baking pan for 5 minutes before removing to
+              cooling rack.
+            </li>
+          </ol>
+        </div>
+
+        <!-- Section for contact form -->
+        <section>
+          <form
+            action="post_comment.js"
+            name="post_comment"
+            target="_self"
+            method="GET"
+          >
+            <!-- It doesn't seem like a fieldset is needed here but I added it anyways -->
+            <fieldset>
+              <h3>Post a Comment or Ask a Question!</h3>
+              <p>
+                <em
+                  >Your email address will not be published. Required fields are
+                  marked *</em
+                >
+              </p>
+
+              <!-- Text area for comment box -->
+              <div class="comment">
+                <label for="comment">Comment *</label>
+                <br />
+                <textarea name="comment" cols="50" rows="5" required></textarea>
+                <br />
+              </div>
+
+              <!-- Input box for name -->
+              <div class="name">
+                <label for="name_input">Name *</label>
+                <br />
+                <input type="text" name="name_input" required />
+                <br />
+              </div>
+
+              <!-- Input box for email -->
+              <div class="email">
+                <label for="email">Email *</label>
+                <br />
+                <input type="email" name="email_input" required />
+                <br />
+              </div>
+              <div class="comment-button">
+                <input type="button" name="post_comment" value="Post Comment" />
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </main>
+
+      <aside>
+        <img
+          id="lauras-family"
+          src="https://joyfoodsunshine.com/wp-content/uploads/2024/06/2024-family-photo-scaled.jpg"
+          alt="image of author's family"
+        />
+
+        <div>
+          <h3>About Laura</h3>
+          <p>
+            I’m Laura, a former chemistry teacher turned homeschooling mom of
+            six! I create simple and delicious recipes that are tested and
+            perfected to make cooking and baking joyful and fun!
+          </p>
+
+          <a href="https://joyfoodsunshine.com/about-laura/" target="_self"
+            >Read more about me</a
+          >
+        </div>
+
+        <h3>Popular</h3>
+        <div class="pr-image">
+          <fig
+            ><img
+              src="https://joyfoodsunshine.com/wp-content/uploads/2018/09/best-homemade-pizza-sauce-recipe-1.jpg"
+              alt="image of pizza sauce"
+            />
+          </fig>
+          <figcaption>
+            <a
+              href="https://joyfoodsunshine.com/easy-homemade-pizza-sauce-recipe/"
+              target="_self"
+              >Easy Homemade Pizza Sauce Recipe (5- Minutes)</a
+            >
+          </figcaption>
+        </div>
+        <div class="pr-image">
+          <fig
+            ><img
+              src="https://joyfoodsunshine.com/wp-content/uploads/2018/09/best-homemade-pizza-sauce-recipe-1.jpg"
+              alt="image of pizza sauce"
+            />
+          </fig>
+          <figcaption>
+            <a
+              href="https://joyfoodsunshine.com/easy-homemade-pizza-sauce-recipe/"
+              target="_self"
+              >Easy Homemade Pizza Sauce Recipe (5- Minutes)</a
+            >
+          </figcaption>
+        </div>
+        <div class="pr-image">
+          <fig
+            ><img
+              src="https://joyfoodsunshine.com/wp-content/uploads/2018/09/best-homemade-pizza-sauce-recipe-1.jpg"
+              alt="image of pizza sauce"
+            />
+          </fig>
+          <figcaption>
+            <a
+              href="https://joyfoodsunshine.com/easy-homemade-pizza-sauce-recipe/"
+              target="_self"
+              >Easy Homemade Pizza Sauce Recipe (5- Minutes)</a
+            >
+          </figcaption>
+        </div>
+        <div class="pr-image">
+          <fig
+            ><img
+              src="https://joyfoodsunshine.com/wp-content/uploads/2018/09/best-homemade-pizza-sauce-recipe-1.jpg"
+              alt="image of pizza sauce"
+            />
+          </fig>
+          <figcaption>
+            <a
+              href="https://joyfoodsunshine.com/easy-homemade-pizza-sauce-recipe/"
+              target="_self"
+              >Easy Homemade Pizza Sauce Recipe (5- Minutes)</a
+            >
+          </figcaption>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

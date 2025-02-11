@@ -1,0 +1,280 @@
+/* Notes 
+- Spent a lot of time figuring out how to do inline block efficiently (don't think I succeeded)
+- Ran into issues where resizing the page smaller makes the content no longer fit the entire screen
+but I assume this would be done in react rather than in HTML and CSS straight up
+*/
+
+
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+.meow-script-regular {
+    font-family: "Meow Script", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* I didn't know if these were needed but I held onto them */
+/* .open-sans-bold {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+} */
+
+/* .open-sans-regular {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+} */
+
+
+/* Global Reset for Margins & Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 375;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100; */
+}
+
+
+/* GLOBAL STYLES */
+
+/* Sets the header to a different style of font to make it "unique" */
+h1 {
+    font-family: "Meow Script", serif;
+    font-size: 5rem;
+}
+
+h2 {
+    font-family: "Open Sans", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;    
+}
+
+h3 {
+    font-family: "Open Sans", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;    
+}
+
+h4 {
+    font-family: "Open Sans", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;    
+}
+
+/* I assumed that using a comma would work here, lucky me! 
+This sets the font sizing of everything  tags to open sans regular
+I realize that I can put this in the *{} selector, but I wanted to try out the comma*/
+p, a , ul, ol, label, input {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 375;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+/* Page Header */
+.page-header {
+    color: black;
+    background-color: bisque;
+    height: 200px;
+    width: 100%;
+}
+
+/* Page Header */
+/* Spent a decent amount of time trying to figure out how to create space between the top
+of the page and the page header without ending up with a weird white space, finally figured it out with padding*/
+.page-header h1 {
+    position: relative;
+    width:fit-content; /* This popped up as an auto-fill and it makes sense to me, so I worked with it */ 
+    margin: 0 auto; /* Centers the header title horizontally */
+    padding: 20px; /* Provides breathing room for the title */
+}
+
+.page-header nav {
+    list-style-type: none;
+    text-align: center;
+}
+
+.page-header nav ul li{
+    display: inline-block;
+    text-align: center;
+}
+
+.page-header nav ul li a {
+    font-weight: 500; /* Changing the font weight to look more like links but not as much as the other headers */
+    display: block;
+    text-align: center;
+    width: auto; /* I'm using auto a lot, but I don't quite know the specifics, but it seems to be working */
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.page-header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Page 
+- I struggled with how to have the main and aside section display as inline block next to each other*/
+
+.main-page {
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 10% 0;
+}
+
+/* Displaying the page section in inline block side by side */
+.main-page aside {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    padding-right: 15%;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.main-page main {
+    display: inline-block;
+    width: 65%;
+    vertical-align: top;
+    padding-left: 15%;
+    padding-right: 2rem;
+}
+
+.main-page main p {
+    padding: .5rem 0;
+}
+
+.main-page main h2 {
+    padding: 1rem 0;
+}
+
+.main-page main section {
+    text-align: left;
+    position: relative;
+}
+
+.main-page main img {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.main-lists ul, ol{
+    padding: .5rem 0 .5rem 1.5rem;
+}
+
+.main-page section {
+    padding: .5rem 0;
+}
+
+/* Contact form refining */
+fieldset {
+    border: none;
+}
+
+fieldset {
+    display:block;
+    padding: .5rem 0;
+}
+
+.comment {
+    padding: .5rem 0;
+}
+
+fieldset textarea {
+    width: 100%;
+}
+
+.name {
+    padding: .5rem 0;
+}
+
+fieldset input[type="text"] {
+    width: 959px;
+}
+
+.email {
+    padding: .5rem 0;
+}
+
+fieldset input[type="email"] {
+    width: 959px;
+    height: 1.25rem;
+}
+
+.comment-button {
+    padding: .5rem 0;
+}
+
+fieldset input[type="button"] {
+    width: 10rem;
+    height: 2rem;
+}
+
+/* Aside Section */
+.main-page aside img#lauras-family {
+    width: 100%;
+}
+
+.main-page aside h3, p {
+    padding: 1rem 0;
+}
+
+.main-page aside a {
+    font-size: .75rem;
+    color: rgba(0, 0, 0, .75);
+}
+
+.main-page aside a:hover {
+    color: rgba(0, 0, 0, .25);
+}
+
+/* Popular Recipe image 
+- Creating a 2x2 grid with inline block */
+.pr-image {
+    display: inline-block;
+    width: 45%;
+    padding: .5rem;
+    font-weight: 500;
+}
+
+.pr-image img {
+    display: inline-block;
+    width: 100%;
+    overflow-x: wrap;
+}
+
+/* Remove underline from figcaption */
+.pr-image figcaption a {
+    text-decoration: none;
+}
+
+/* Gives underlin when hovering */
+.pr-image figcaption:hover {
+    text-decoration: underline;
+}
