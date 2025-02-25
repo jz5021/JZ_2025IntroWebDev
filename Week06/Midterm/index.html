@@ -7,30 +7,39 @@
     <link rel="stylesheet" href="./css/index.css" />
     <title>ZHAOJICUN Website Homepage</title>
   </head>
+
   <body>
-    <h1>ZHAOJICUN</h1>
+    <!-- Background Video -->
+    <div class="video-wrapper">
+      <!-- Current video size is 13.5 MB, might need to downsize -->
+      <video autoplay muted loop id="homepage-video">
+        <source
+          src="./assets/index/20250224-Backgroundvideo.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-    <h2>赵霁村</h2>
+      <!-- Dark overlay -->
+      <div class="overlay"></div>
+    </div>
 
-    <!-- Current video size is 13.5 MB, might need to downsize -->
-    <video autoplay muted loop id="homepage">
-      <source
-        src="./assets/index/20250224-Backgroundvideo.mp4"
-        type="video/mp4"
-      />
-    </video>
+    <header class="container" id="header">
+      <h2>赵霁村</h2>
+      <div class="menu_container">
+        <h1>ZHAOJICUN</h1>
 
-    <!-- Main Menu -->
-    <nav id="hamburger_menu">
-      <ul>
-        <li><a href="./by_project.html">By Project</a></li>
-        <li><a href="./by_medium.html">By Medium</a></li>
-        <li><a href="./about.html">About Me</a></li>
-      </ul>
-    </nav>
+        <nav id="hamburger_menu">
+          <ul>
+            <li><a href="./by_project.html">By Project</a></li>
+            <li><a href="./by_medium.html">By Medium</a></li>
+            <li><a href="./about.html">About Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <!-- Highlighted Projects -->
-    <nav id="highlighted_projects">
+    <nav class="container" id="highlights">
       <ul>
         <li><a href="#">Project 1</a></li>
         <li><a href="#">Project 2</a></li>

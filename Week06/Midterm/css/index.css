@@ -1,11 +1,140 @@
-/* Font Import */
+/* Homepage styling */
 
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+/* Desktop */
+/* Text & Links */
+h1, h2, a {
+  color: white;
+  transition: all .8s ease;
+}
 
-/* Menu Styles */
+a:hover {
+  color: rgba(255, 255, 255, .3);
+}
+
+h1 {
+  font-size: 5rem;
+  transition: color .8s ease;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+/* Background Video */
+#homepage-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* Hamburger Nav & Header */
+#header {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu_container {
+  position: relative;
+
+}
+
+#hamburger_menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  text-align: right;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+
+#hamburger_menu ul li {
+  margin: .5rem;
+}
+
+#hamburger_menu ul li a {
+  display: block;
+  font-size: 3rem;
+}
+
+.menu_container:hover h1 {
+  color: rgba(255, 255, 255, .3);
+}
+
+.menu_container:hover #hamburger_menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Highlighted Projects */
+#highlights {
+  position: absolute;
+  width: 50%;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#highlights ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#highlights ul li {
+  font-size: 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-top: 2px solid #fff;
+}
+
+#highlights ul li a {
+  display: block;
+  padding: .5rem 1.5rem 1.5rem .5rem;
+  width: 100%;
+  height: 100%;
+}
+
+#highlights ul li a:hover {
+  background-color: rgba(1, 1, 1, .3);
+}
+
+/* Tablet */
+@media (max-width: 1024px){}
+
+/* Mobile */
+@media (max-width: 768px) {}
