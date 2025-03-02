@@ -20,6 +20,11 @@ h2 {
   font-size: 3rem;
 }
 
+/* Disables scrolling entirely */
+body {
+  overflow: hidden;
+}
+
 /* Background Video */
 #homepage-video {
   position: fixed;

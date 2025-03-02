@@ -6,6 +6,10 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
+html, body {
+  margin: 0;
+}
+
   ul li {
     list-style-type: none;
     text-decoration: none;
@@ -19,4 +23,10 @@
     display: flex;
     justify-content: right;
     align-items: right;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
