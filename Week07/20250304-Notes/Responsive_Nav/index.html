@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Layout W/ Nav Toggle</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script type="text/javascript">
+      // Listen fpr the page to load, so make sure that the page is loaded
+      //If content isn't fully loaded, then you can't grab anything and then messes up the load
+      // The anonymous function is a single-use functionm, so it will not be reused
+      document.addEventListener("DOMContentLoaded", function () {
+        // add a click event listener to the hamburger menu icon
+        // you use const most of the time instead of int, var, etc.
+        //Store the hamburger icon as a variable named hamburger
+        const hamburger = document.getElementById("hamburger");
+        // adding an event listener to the hamburger icon that calls toggle menu function
+        hamburger.addEventListener("click", toggleMenu);
+      });
+
+      // then write a function that grabs the nav by id and applies the class ".show"
+      function toggleMenu() {
+        //grab the nav element by its ID and add/remove the class .show
+        const navigation = document.getElementById("main-nav");
+        navigation.classList.toggle("show");
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 class="brand"><a href="#">Logo</a></h1>
+      <!-- Hide this on desktop but show on mobile -->
+      <!-- "&#____;" is an html entity that helps you insert a symbol -->
+      <span class="mobile-menu" id="hamburger">&#8801;</span>
+      <!-- we use an id here because the easiest way to affect something in js is by using its id -->
+      <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+      <div class="thumb">
+        <img src="./img/chicken.jpg" alt="A photo of a chicken" />
+      </div>
+    </main>
+  </body>
+</html>

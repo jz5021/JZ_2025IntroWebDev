@@ -1,0 +1,156 @@
+/* Global styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* don't size images, size the box that the image is in */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop first design pattern */
+
+header {
+    /* remember that this only cares about direct descendants NOT the li's */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../img/denim.webp');
+    padding: 0 2rem;
+    position: relative;
+}
+
+.brand  {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.mobile-menu {
+    /* hiding the mobile menu on desktop */
+    display: none;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;   
+    margin: 0;
+}
+
+.menu li {
+    min-width: 5rem;
+    transition: all .8s ease;
+}
+
+/* most specific you can be */
+.menu li a {
+    /* make them fill out as much sace in their containers */
+    display: block;
+    padding: 1rem;
+}
+
+.menu li:hover {
+    color: #eee;
+    background: rgba(0,0,0,.3);
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.thumb {
+    width: 23%;
+    margin: 2rem auto;
+}
+
+/* Media Queries */
+/* If you style desktop-first make sure you use the < # pixels 
+inside your media queries; opp is true for mobile-first */
+
+/* Tablet */
+/* Careful about ranges in media queries, make sure you have a media query to catch sizes outside of range */
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: aqua;
+    }
+
+    .thumb {
+        width: 45%;
+        margin: 1rem auto;
+    }
+}
+
+/* Mobile */
+/* Sometimes it still looks good on mobile, just make sure to double check */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: orange;
+    }
+
+    header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .brand {
+        margin: 0.5rem;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: .5rem;
+        /* entities count as font sizes */
+        font-size: 2rem;
+        color: #aaa;
+        cursor: pointer;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu li {
+        border-bottom: 1px solid #aaa;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .thumb {
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+}
