@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input | Switch Statements</title>
+    <style type="text/css">
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+
+      .blue {
+        color: blue;
+      }
+
+      .purple {
+        color: purple;
+      }
+    </style>
+    <script type="text/javascript">
+      // function that changes the color of the h1 based on number that user picks
+
+      // first thing needed is an event listener to make sure that the DOM content is fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        const myButton = document.getElementById("changeBtn");
+        // console.log(myButton.classList);
+        myButton.addEventListener("click", changeClass);
+      });
+
+      function changeClass() {
+        //grab the user input & store
+        let userN = document.getElementById("num");
+        // a big gotcha with forms and js is even though the input type is number
+        console.log(typeof userN.value);
+        // this turns out to be a string, but we need a number
+        let n = parseInt(userN.value);
+        console.log(typeof n);
+
+        //Grab our h1 so we can apply classes via our switch statement
+        var h = document.getElementById("changeMe");
+
+        switch (n) {
+          case 0:
+            h.className = "red";
+            // you can have a bunhc of lines of code here
+            break;
+          case 1:
+            h.className = "blue";
+            break;
+          case 2:
+            h.className = "green";
+            break;
+          case 3:
+            h.className = "purple";
+            break;
+          default:
+            // the default case is always needed in case someone fineds a big and it doesn;t work
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="changeMe">Get user input</h1>
+    <form>
+      <fieldset>
+        <legend>Pick a number between 0 and 3</legend>
+        <input type="number" name="num" id="num" min="0" max="3" step="1" />
+        <button type="button" id="changeBtn" class="btnClass">
+          Click to change the color class of the H1
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>

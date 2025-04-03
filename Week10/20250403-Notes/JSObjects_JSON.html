@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Objects & JSON</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+      // initialize a new object and store it as a variable named customer
+      const customer = {
+        name: "Tony",
+        age: 23,
+        married: false,
+        pets: ["dog", "cat", "iguana"],
+        siblings: [
+          {
+            name: "Mary",
+            age: 32,
+            married: false,
+          },
+          {
+            name: "Billy",
+            age: 16,
+            married: true,
+          },
+        ],
+      };
+
+      console.log(customer.name);
+      // reassign the value for name property
+      customer.name = "Anthony";
+      console.log(customer);
+
+      // log tony's third pet
+      console.log(customer.pets[2]);
+      // this makes it easier if you were to want to replace what's in the brackets by passing variables in
+      console.log(customer["pets"][2]);
+      customer.pets.push("chicken");
+      console.log(customer.pets);
+
+      // how to access siblings
+      customer.siblings[0].pets = ["spider", "snail"];
+      console.log(customer.siblings[0]);
+      console.log(customer.pets.length);
+    </script>
+  </head>
+  <body></body>
+</html>

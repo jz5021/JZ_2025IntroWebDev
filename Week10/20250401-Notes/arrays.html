@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arrays</title>
+    <script type="text/javascript">
+      var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      console.log(months);
+      console.log(months.length);
+
+      // remove last slt item and assign it to another variable
+      const lastMonth = months.pop(); //Removes the last item in an array but it completely deletes it
+      console.log(months.length);
+      console.log(months);
+      console.log("We just removed the month ${lastMonth} from our array.");
+
+      // to add back, or any other value to the end of the array , use push()
+      months.push(lastMonth);
+      months.push("Vacationember");
+      console.log(months);
+      months.pop();
+
+      // loop through months and remove the last month each time
+      for (var i = 0; i < months.length; i++) {
+        console.log(`Month number ${i + 1} is ${months[i]}`);
+      }
+
+      let backMonths = [];
+      // loop through our months and remove the last month each time and store it in a new array
+      for (var i = months.lenght; i < 0; i--) {
+        const delMonth = months.pop();
+        backMonths.push(delMonth);
+        consol.log(
+          `deleted ${delMonth} and added it to the new array. Months.length is now ${months.length}`
+        );
+      }
+
+      //pick a random number within the range of array
+      const rn = Math.floor(Math.random() * backMonths.length);
+      console.log(`random month is: ${backMonths[rn]}`);
+    </script>
+  </head>
+  <body></body>
+</html>

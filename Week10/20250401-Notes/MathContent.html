@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arrays</title>
+    <script type="text/javascript">
+      // make an array of image srcs from the interwebs to pick from
+      const arrImg = [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/1920px-Hausziege_04.jpg",
+        "https://cyfairanimalhospital.com/wp-content/uploads/2019/01/blog_goaT.jpg",
+        "https://media.4-paws.org/2/2/7/d/227da55e9646ed9096cbc309ea33d05ec53ec2f3/VIER%20PFOTEN_2013-07-19_024-3851x2665-1920x1329.webp",
+      ];
+
+      const arrLinks = [
+        "https://en.wikipedia.org/wiki/Goat",
+        "https://cyfairanimalhospital.com/blog/preventive-medicine/pros-and-cons-of-goat-ownership/",
+        "https://www.four-paws.org/campaigns-topics/topics/farm-animals/10-amazing-facts-about-goats",
+      ];
+
+      function randomIndex(n) {
+        const rn = Math.floor(n * Math.random());
+        return rn;
+      }
+
+      function loadRandomImage() {
+        const index = randomIndex(arrImg.length);
+        const img = document.getElementById("animal");
+        const link = document.getElementById("dynLink");
+
+        //assign the src of the image to a string in a random index slot in our img array
+        img.src = arrImg[index];
+        link.href = arrLinks[index];
+      }
+
+      // Cannot immediately call loadRandomImage yet because the page has not yet loaded and the elements we are trying to grab don't exist
+      // I don't know if this is an issue in separate js files
+
+      // Wait for the page to finish loading ebfore we try to access any DOM elements
+
+      // use an anonymous function for callbacks that are used once
+      document.addEventListener("DOMContentLoaded", function () {
+        loadRandomImage();
+        // space for more event listeners or if we had to grab anything else from the DOM content
+      });
+    </script>
+  </head>
+  <body>
+    <a href="#" id="dynLink" target="_blank"><img src="" id="animal" /></a>
+  </body>
+</html>
