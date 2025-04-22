@@ -3,39 +3,72 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap Nav Bar and Carousel</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <title>Hello GSAP Tweens</title>
+
+    <style type="text/css" media="screen">
+      #sb {
+        position: absolute;
+        top: 600px;
+        left: 0;
+      }
+    </style>
   </head>
   <body>
-    <!-- Navbar with brand on left menu on right, and a drop down menu-->
-    <div class="navbar navbar-expandlg bg-dark">
-      <div class="container-fluid">
-        <!-- Probably want to override colors and fonts here -->
-        <a class="navbar-brand" href="#">Nicolas Cage Free Eggs</a>
-        <!-- This is our hidden on desktop/larger screens; hamburger menu -->
-        <button
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls
-        ></button>
-      </div>
-    </div>
+    <img src="./img/soccer-ball.png" id="sb" />
+    <!-- 5 basketballs to bounce -->
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
 
-    <!-- Loading BS optinal JS because we are using components -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Load GSAP core library at the bottom of our body tag -->
+    <!--
+      Older free without subscription versions
+      https://github.com/greensock/GSAP
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Our Script using GSAP Library Functions -->
+    <script type="text/javascript">
+      // grab the soccer ball + store it as a variable so we can "kick" it
+      // const sb = document.getElementById('sb')
+      // querySelector returns the FIRST matching element on the page
+      const sb = document.querySelector('#sb')
+      // our arguments are
+      // 1- what we want to animate, we can pass in a element var, OR a selector
+      // 2- how long we want it to take, this is optional, we can also use the duration option property
+      // 3- the options object
+
+      gsap.to(sb, 2, {
+        x: 800,
+        y: -500,
+        rotation: 720,
+        scale: 0.5,
+        delay: 0.5,
+        ease: 'elastic.out',
+      })
+
+      gsap.to('.bball', 1, {
+        y: 500,
+        rotation: 360,
+        delay: 2,
+        ease: 'bounce.out',
+        stagger: {
+          each: 0.5,
+        },
+      })
+
+      // making a callback function to fire at the ernd of the animation sequence
+      const imDone = () => {
+        alert('I am DONE!')
+      }
+
+      // onComplete fires a callback function when the animation completes
+      gsap.to('#sb,.bball', 5, {
+        opacity: 0,
+        delay: 10,
+        onComplete: imDone,
+      })
+    </script>
   </body>
 </html>
