@@ -1,0 +1,10 @@
+#img-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#img-container img {
+    position: absolute;
+    max-height: 40vh;
+    max-width: 40vw;
+}

@@ -4,7 +4,8 @@ body {
 
 #homepage-video {
     position: fixed;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     object-fit: cover;
@@ -21,12 +22,26 @@ body {
     z-index: -50;
 }
 
-h1, h2 {
+h1 {
     color: white;
+    text-transform: uppercase;
+    font-size: 2rem;    
+}
+
+h2 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
 }
 
 p {
     color: white;
+    font-size: .8rem;
+}
+
+a {
+    color: white;
+    font-size: .9rem;
 }
 
 main {
@@ -43,21 +58,30 @@ main {
     justify-content: center;
     align-items: center;
     z-index: 0;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
 
 #identity-selector {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position:absolute;
+    row-gap: 1.2rem;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: fit-content;
+    pointer-events: none; /* Stops users from interacting before the animation finishes */ 
+    z-index: 10;
 }
 
-#homepage-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    width: 100vw;
-    bottom: 5vh;
-    left: 0;
+#identity-selector .btn {
+    text-transform: uppercase;
+    width: 60vw;
 }
 
