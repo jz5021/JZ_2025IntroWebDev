@@ -15,3 +15,9 @@
 - Hamburger menu implementation
 - Create randomization of images on about page
 - Implementation of randomized text
+
+
+## 2025.04.28
+- Work on Bio text and links
+- Decision to move away from randomization of polaroids on about page and toward a cleaner layout
+- Changed menu format
