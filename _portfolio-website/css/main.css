@@ -192,6 +192,10 @@ header {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.paragraph-beat {
+  font-weight: bold;
+}
+
 /* ---------------- Tablet (min-width: 768px) ---------------- */
 @media (min-width: 768px) {
   /* p, a {

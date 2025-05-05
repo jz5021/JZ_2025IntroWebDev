@@ -8,7 +8,7 @@ const image_urls = [
     "assets/images/photography/polaroids/20241012-Kaia-12.jpg",
     "assets/images/photography/portraits/20230622-Ace.jpg",
     "assets/images/photography/portraits/20230930-Naz1.jpg",
-    "assets/images/photography/portraits/20230930-Naz2.jpg",
+    "assets/images/photography/portraits/20230930-burden-of-dreams-Naz.jpg",
     "assets/images/photography/portraits/20231008-Karencici.jpg",
     "assets/images/photography/portraits/20231008-SunkisKarencici.jpg",
     "assets/images/photography/portraits/20231026-NazJinsol.jpg",

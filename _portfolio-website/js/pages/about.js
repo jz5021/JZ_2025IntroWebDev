@@ -1,6 +1,37 @@
+// About page reveal functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const revealTrigger = document.querySelector('.reveal-trigger');
+    const aboutContent = document.querySelector('.about-content');
+    const aboutIntro = document.querySelector('.about-intro');
+
+    if (revealTrigger && aboutContent) {
+        revealTrigger.addEventListener('click', () => {
+            aboutContent.classList.toggle('hidden');
+            
+            // Add a class for styles rather than directly modifying CSS properties
+            if (!aboutContent.classList.contains('hidden')) {
+                aboutIntro.classList.add('intro-minimized');
+                
+                // Scroll with a slight delay for smoother effect
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, 500);
+            } else {
+                aboutIntro.classList.remove('intro-minimized');
+            }
+        });
+    }
+});
+
 // JavaScript to load random image and auto-cycle
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('about-me-image-container');
+    
+    // Skip if container doesn't exist
+    if (!container) return;
 
     // Image container styling and size
     container.style.position = 'relative';
@@ -8,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     container.style.width = '100vw';
     container.style.height = '50vh';
     
-    // Array of image URLs that will cycle through
     const imageArray = [
         "assets/images/photography/polaroids/20240808-Kai_David_Juhui-1.jpg",
         "assets/images/photography/polaroids/20240809-Jessie-2.jpg",
@@ -22,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "assets/images/photography/polaroids/20241023-Dawang-1.jpg"
     ];
     
-    // Settings for the slideshow
     const slideInterval = 5000; // Time between slides in milliseconds
     let currentIndex;
     let slideshowTimer;
@@ -36,16 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to display an image by index
     function displayImage(index) {
-        // Get the current image (if any)
+        
         const currentImage = container.querySelector('img');
-    
-        // Create new image element
+
         const newImage = document.createElement('img');
         newImage.src = imageArray[index];
         newImage.alt = 'Slideshow image of the artist';
         newImage.classList.add('slideshow-image');
     
-        // Style the new image
         Object.assign(newImage.style, {
             position: 'absolute',
             top: '0',
@@ -58,14 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
             zIndex: '2'
         });
     
-        // Add the new image on top
         container.appendChild(newImage);
     
-        // Once new image loads, fade it in
         newImage.onload = function () {
             newImage.style.opacity = '1';
-    
-            // If there was a previous image, fade it out and remove after transition
             if (currentImage) {
                 currentImage.style.transition = 'opacity 0.8s ease-in-out';
                 currentImage.style.opacity = '0';
@@ -77,11 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 800); // match fade duration which would be the transition style time in ms
             }
         };
-    
-        // Update index
+
         currentIndex = index;
     }
-    
     
     // Function to move to the next image
     function nextImage() {
@@ -92,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to start the slideshow
     function startSlideshow() {
-        // Reset existing timer
         if (slideshowTimer) {
             clearInterval(slideshowTimer);
         }
@@ -104,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with a random image
     const randomIndex = getRandomInt(0, imageArray.length - 1);
     displayImage(randomIndex);
-    
-    // Start the automatic slideshow
+
     startSlideshow();
 });

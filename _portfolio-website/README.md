@@ -38,3 +38,7 @@
     - about.html
     - medium.html
     - photography.html
+
+## 2025.05.04
+- Reworked bio for page and added emphasizing text
+- Created project page and populated with images

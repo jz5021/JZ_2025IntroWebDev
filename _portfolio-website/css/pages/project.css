@@ -1,0 +1,82 @@
+#project-group-container p {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+#project-group-container div{
+    width: 100vw;
+    display: flex;
+}
+
+#project-container-flesh-of-a-moth {
+    display: flex;
+    position: relative;
+    left: 5vw;
+    padding: 16px;
+}
+
+#project-container-flesh-of-a-moth img {
+    width: 50vw;
+}
+
+#project-container-flesh-of-a-moth p {
+    text-align: right;
+}
+
+#project-container-burden-of-dreams {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    right: 10vw;
+    padding: 16px;
+}
+
+#project-container-burden-of-dreams img {
+    width: 32vw;
+}
+
+#project-container-artlogic-ui-redesign {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    padding: 16px 0;
+}
+
+#project-container-artlogic-ui-redesign img {
+    width: 80vw;
+}
+
+/* ---------------- Tablet (min-width: 768px) ---------------- */
+@media (min-width: 768px) {
+    #project-group-container p {
+        font-size: 1.2rem;
+    }
+}
+  
+/* ---------------- Desktop (min-width: 1024px) ---------------- */
+@media (min-width: 1024px){
+    #project-container-flesh-of-a-moth img {
+        width: 30vw;
+    }
+
+    #project-container-burden-of-dreams img {
+        width: 18vw;
+    }
+
+    #project-container-burden-of-dreams {
+        right: 20vw;
+        padding: 16px;
+    }
+
+    #project-container-artlogic-ui-redesign img {
+        width: 50vw;
+    }
+    
+    #project-container-artlogic-ui-redesign {
+        justify-content: flex-start;
+        padding: 32px 0;
+        left: 10vw;
+        text-align: end;
+    }
+
+}

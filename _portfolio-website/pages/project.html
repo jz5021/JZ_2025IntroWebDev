@@ -7,9 +7,15 @@
     <title>Projects</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="css/pages/project.css" />
     <script src="js/main.js" defer></script>
-    <script src="#" defer></script>
+    <script src="js/pages/project.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer></script>
   </head>
   <body>
     <header>
@@ -21,14 +27,45 @@
       <nav class="nav-menu">
         <ul>
           <li><a href="pages/medium.html">Mediums</a></li>
-          <li><a href="pages/">Projects</a></li>
+          <li><a class="current-page" href="pages/">Projects</a></li>
           <li><a href="pages/about.html">About</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <!-- Content -->
+      <h2>Projects</h2>
+      <div id="project-group-container">
+        <div id="project-container-flesh-of-a-moth">
+          <a href="#">
+            <img
+              src="assets/images/cgi/20250505-Flesh-of-a-moth-Prototype4b.jpg" />
+            <p>../Flesh of a Moth <sup>01</sup></p></a
+          >
+        </div>
+        <div id="project-container-burden-of-dreams">
+          <a href="#">
+            <img
+              src="assets/images/photography/portraits/20230930-burden-of-dreams-Naz.jpg" />
+            <p>Burden of Dreams <sup>02</sup></p></a
+          >
+        </div>
+        <div id="project-container-artlogic-ui-redesign">
+          <a href="#">
+            <img
+              src="assets/images/ui-ux/20240429-artlogic-ui-redesign-iteration2.jpg" />
+            <p>Artlogic UI Redesign <sup>03</sup></p></a
+          >
+        </div>
+      </div>
+
+      <!-- Grouping template -->
+      <!-- <div id="project-container-(insert name)">
+        <a href="#">
+          <img src="#" />
+          <p>(Insert name) <sup>(next number)</sup></p></a
+        >
+      </div> -->
     </main>
 
     <!-- See main.js file for footer -->
